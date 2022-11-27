@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf4acc9af81e6ac2fc72dbbb514c2b0d",
+    "content-hash": "d957718055336aef9fa3e22af0d6eb25",
     "packages": [
         {
             "name": "cakephp/cakephp",
@@ -1168,6 +1168,52 @@
                 "source": "https://github.com/cakephp/phinx/tree/0.12.13"
             },
             "time": "2022-10-03T04:57:40+00:00"
+        },
+        {
+            "name": "satthi/csv-combine",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/satthi/csv-combine.git",
+                "reference": "d112df7e6ca8f713058200c92c58a60d41f2e8c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/satthi/csv-combine/zipball/d112df7e6ca8f713058200c92c58a60d41f2e8c7",
+                "reference": "d112df7e6ca8f713058200c92c58a60d41f2e8c7",
+                "shasum": ""
+            },
+            "require-dev": {
+                "cakephp/cakephp-codesniffer": "dev-master",
+                "phpunit/phpunit": "*"
+            },
+            "type": "php-plugin",
+            "autoload": {
+                "psr-4": {
+                    "CsvCombine\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Satoru Hagiwara",
+                    "role": "Author"
+                }
+            ],
+            "description": "CsvCombine",
+            "homepage": "https://github.com/satthi/csv-combine",
+            "keywords": [
+                "csv",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/satthi/csv-combine/issues",
+                "source": "https://github.com/satthi/csv-combine"
+            },
+            "time": "2022-01-20T02:11:46+00:00"
         },
         {
             "name": "symfony/config",
