@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./server/docker/web
+      args:
+        - WWW_USER_ID=${WWW_USER_ID:-1000}
+        - WWW_GROUP_ID=${WWW_GROUP_ID:-1000}
+    container_name: ${COMPOSE_PROJECT_NAME:-${APP_NAME}}_web
+    volumes:
+      - ./backend/:/var/www/html
+      - ./server/docker/web/php.ini:/usr/local/etc/php/php.ini
+    ports:
+      - ${PORT_HTTP:-80}:80
+      - ${PORT_HTTPS:-443}:443
+    networks:
+      - frontend
+      - backend
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
