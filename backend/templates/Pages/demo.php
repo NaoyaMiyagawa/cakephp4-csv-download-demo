@@ -1,3 +1,9 @@
+<?php
+
+/**
+ * @var \App\View\AppView $this
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +36,11 @@
                     <span>CSV Download</span>
                 </th>
                 <td>
-                    <button>Download</button>
+                    <?= $this->Html->link(
+                        'Download',
+                        ['prefix' => 'File', 'controller' => 'Demos', 'action' => 'downloadCsv'],
+                        ['class' => 'button']
+                    ) ?>
                 </td>
             </tr>
 
