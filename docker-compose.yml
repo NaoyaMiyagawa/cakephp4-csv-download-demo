@@ -18,6 +18,23 @@ services:
       - frontend
       - backend
 
+  db:
+    build: ./server/docker/db
+    container_name: ${COMPOSE_PROJECT_NAME:-${APP_NAME}}_db
+    volumes:
+      - db-store:/var/lib/postgresql/data:delegated
+    ports:
+      - ${PORT_DB:-5432}:5432
+    environment:
+      - POSTGRES_DB=${DB_DATABASE:-${APP_NAME}}
+      - POSTGRES_USER=${DB_USERNAME:-postgres}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-postgres}
+    networks:
+      - backend
+
+volumes:
+  db-store:
+
 networks:
   frontend:
     driver: bridge
