@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller\File;
 
 use App\Controller\AppController;
+use App\Lib\File\DemoExporter;
 use Cake\Http\Response;
 use Cake\I18n\FrozenTime;
 
@@ -24,14 +25,14 @@ class DemosController extends AppController
     {
         $this->request->allowMethod(['get']);
 
-        // $exporter = new DemoCsvExporter();
-        // $tmpFilepath = $exporter->setProperties($project->id)->export();
+        $exporter = new DemoExporter();
+        $tmpFilepath = $exporter->setProperties()->exportCsv();
 
         $now = FrozenTime::now()->i18nFormat('yyyyMMdd_HHmmss');
         $exportName = "{$now}_demo.csv";
 
-        // $response = $this->response->withFile($tmpFilepath, ['download' => true, 'name' => $exportName]);
+        $response = $this->response->withFile($tmpFilepath, ['download' => true, 'name' => $exportName]);
 
-        return $this->response;
+        return $response;
     }
 }

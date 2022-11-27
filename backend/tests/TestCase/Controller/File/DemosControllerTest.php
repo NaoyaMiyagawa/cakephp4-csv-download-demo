@@ -9,9 +9,9 @@ use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\File/DemosController Test Case
+ * App\Controller\File\DemosController Test Case
  *
- * @uses \App\Controller\File/DemosController
+ * @uses \App\Controller\File\DemosController
  */
 class DemosControllerTest extends TestCase
 {
