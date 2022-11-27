@@ -49,7 +49,11 @@
                     <span>TSV Download</span>
                 </th>
                 <td>
-                    <button>Download</button>
+                    <?= $this->Html->link(
+                        'Download',
+                        ['prefix' => 'File', 'controller' => 'Demos', 'action' => 'downloadTsv'],
+                        ['class' => 'button']
+                    ) ?>
                 </td>
             </tr>
         </table>

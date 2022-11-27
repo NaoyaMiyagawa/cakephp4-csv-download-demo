@@ -72,6 +72,18 @@ abstract class AbstractCsvExporter
         return $this->tmpFilePath;
     }
 
+    /**
+     * Create exporting TSV file then return its filepath
+     * @return string
+     */
+    public function exportTsv(): string
+    {
+        $exportConfig = array_merge($this->defaultExportConfig, ['delimiter' => "\t"]);
+        $this->exporter->make($this->makeExportData(), $this->tmpFilePath, $exportConfig);
+
+        return $this->tmpFilePath;
+    }
+
     ##############################################################################
     # Private Methods
     ##############################################################################

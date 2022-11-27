@@ -35,4 +35,19 @@ class DemosController extends AppController
 
         return $response;
     }
+
+    public function downloadTsv(): Response
+    {
+        $this->request->allowMethod(['get']);
+
+        $exporter = new DemoExporter();
+        $tmpFilepath = $exporter->setProperties()->exportTsv();
+
+        $now = FrozenTime::now()->i18nFormat('yyyyMMdd_HHmmss');
+        $exportName = "{$now}_demo.tsv";
+
+        $response = $this->response->withFile($tmpFilepath, ['download' => true, 'name' => $exportName]);
+
+        return $response;
+    }
 }

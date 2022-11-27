@@ -22,4 +22,10 @@ class DemosControllerTest extends TestCase
         $this->get('/file/demos/downloadCsv');
         $this->assertResponseOk();
     }
+
+    public function testDownloadTsv()
+    {
+        $this->get('/file/demos/downloadTsv');
+        $this->assertResponseOk();
+    }
 }
