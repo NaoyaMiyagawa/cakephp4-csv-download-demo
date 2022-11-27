@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -14,6 +15,7 @@ declare(strict_types=1);
  * @since         1.2.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Test\TestCase\Controller;
 
 use Cake\Core\Configure;
@@ -41,6 +43,12 @@ class PagesControllerTest extends TestCase
         $this->get('/pages/home');
         $this->assertResponseOk();
         $this->assertResponseContains('CakePHP');
+        $this->assertResponseContains('<html>');
+
+        $this->get('/pages/demo');
+        $this->assertResponseOk();
+        $this->assertResponseContains('CSV Download');
+        $this->assertResponseContains('TSV Download');
         $this->assertResponseContains('<html>');
     }
 
